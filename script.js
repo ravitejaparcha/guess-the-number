@@ -6,6 +6,8 @@ console.log(secretNumber);
 
 let score = 20;
 
+let highScore = 0;
+
 // console.log(guess);
 
 document.querySelector(".again").addEventListener("click", function () {
@@ -38,6 +40,11 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "green";
 
     document.querySelector(".number").style.width = "30rem";
+
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(".highscore").textContent = highScore;
+    }
 
     // console.log("Yes equal");
   } else if (guess > secretNumber) {
